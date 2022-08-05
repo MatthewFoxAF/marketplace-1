@@ -20,10 +20,11 @@ const Sidebar: FC<Props> = ({ attributes, setTokensSize }) => {
 
   return (
     <Accordion.Root
+    //---------This is the Parent container for all attribute search items
       type="multiple"
-      className="col-span-3 hidden border-r-[1px] border-gray-300 dark:border-neutral-600 md:block"
+      className="collectionTabContent"
     >
-      <div className="overflow-hidden">
+      <div className="attributeButton">
         <button
           onClick={() => {
             router.query?.attribute_key === ''
@@ -44,10 +45,11 @@ const Sidebar: FC<Props> = ({ attributes, setTokensSize }) => {
         <Accordion.Item
           value={`item-${attribute.key}`}
           key={attribute.key}
-          className="overflow-hidden"
+          className="attributeButton"
         >
           <Accordion.Header
-            className={`flex w-full justify-between border-b-[1px] border-gray-300 dark:border-neutral-600 ${
+          //------This is the Attribute Parent Button
+            className={`attributeButton ${
               router.query.attribute_key &&
               router.query.attribute_key.toString() === attribute.key
                 ? 'divide-gray-800 dark:divide-gray-300'
@@ -66,7 +68,8 @@ const Sidebar: FC<Props> = ({ attributes, setTokensSize }) => {
                       )
                 }
               }}
-              className={`reservoir-label-l w-full py-5 px-6 text-left capitalize transition dark:text-white ${
+              //------This is the attribute Text div
+              className={`attributeButtonInner ${
                 router.query.attribute_key &&
                 router.query.attribute_key.toString() === attribute.key
                   ? 'bg-primary-100 hover:bg-primary-300  dark:bg-primary-900 dark:hover:bg-primary-900'
@@ -76,15 +79,16 @@ const Sidebar: FC<Props> = ({ attributes, setTokensSize }) => {
               {attribute.key}
             </button>
             <div
+            //----This is the arrow of the drop down
               className={`flex items-center ${
                 router.query.attribute_key &&
                 router.query.attribute_key.toString() === attribute.key
-                  ? 'bg-primary-100 hover:bg-primary-300 dark:bg-primary-900 dark:hover:bg-primary-900'
-                  : 'hover:bg-primary-100 dark:hover:bg-primary-900'
+                  ? 'attributeButtonInners2'
+                  : 'attributeButtonInners1'
               }`}
             >
-              <div className="h-6 w-px bg-gray-300 dark:bg-neutral-600"></div>
-              <Accordion.Trigger className="p-5 transition">
+              {/* <div className="h-6 w-px bg-gray-300 dark:bg-neutral-600"></div> */}
+              <Accordion.Trigger className="attributeFilterParent">
                 <FiChevronDown className="h-5 w-5" aria-hidden />
               </Accordion.Trigger>
             </div>

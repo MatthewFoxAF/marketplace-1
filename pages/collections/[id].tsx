@@ -182,9 +182,9 @@ const Home: NextPage<Props> = ({ fallback, id }) => {
         <Hero collectionId={id} fallback={fallback} />
         <Tabs.Root
           value={router.query?.tab?.toString() || 'items'}
-          className="col-span-full grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 3xl:grid-cols-16 4xl:grid-cols-21"
+          className="collectionTabRoot"
         >
-          <Tabs.List className="col-span-full flex justify-center border-b border-[#D4D4D4] dark:border-[#525252]">
+          <Tabs.List className="collectionTabList">
             {tabs.map(({ name, id }) => (
               <Tabs.Trigger
                 key={id}
@@ -202,6 +202,7 @@ const Home: NextPage<Props> = ({ fallback, id }) => {
           <Tabs.Content value="items" asChild>
             <>
               <Sidebar attributes={attributes} setTokensSize={tokens.setSize} />
+              {/* Above is the Sidebar Menu ------ Below is the grid in which collectiom is shown */}
               <div className="col-span-full mx-6 mt-4 sm:col-end-[-1] md:col-start-4">
                 <div className="mb-4 hidden items-center justify-between md:flex">
                   <div className="flex items-center gap-6">

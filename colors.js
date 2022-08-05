@@ -56,11 +56,11 @@ const primaryColors = {
     900: '#48138F',
   },
   toxic: {
-    100: '#f5f6db',
-    300: '#ecedbd',
-    500: '#d9dc82',
-    700: '#C0C53F',
-    900: '#adb139',
+    100: '#CFFF48',
+    300: '#CFFF48',
+    500: '#CFFF48',
+    700: '#CFFF48',
+    900: '#CFFF48',
   },
   pink: {
     100: '#FFE8F5',

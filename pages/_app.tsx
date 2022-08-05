@@ -33,6 +33,7 @@ import {
   ReservoirKitTheme,
 } from '@reservoir0x/reservoir-kit-ui'
 import { useEffect, useState } from 'react'
+import 'pages/style.css'
 
 // Select a custom ether.js interface for connecting to a network
 // Reference = https://wagmi-xyz.vercel.app/docs/provider#provider-optional
@@ -101,6 +102,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           font: BODY_FONT_FAMILY,
           primaryColor: primaryColorPalette['700'],
           primaryHoverColor: primaryColorPalette['900'],
+
         })
       )
     } else {

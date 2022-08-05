@@ -33,7 +33,7 @@ const TrendingCollectionTable: FC<Props> = ({ fallback }) => {
 
   const columns = isSmallDevice
     ? ['Collection', 'Floor Price']
-    : ['Collection', 'Volume', 'Floor Price', 'Supply']
+    : ['Collection', 'Volume', 'Floor Pickles', 'Supply']
 
   return (
     <div className="mb-11 overflow-x-auto">
